@@ -1048,5 +1048,12 @@
   color: #555;
   margin-top: 15px;
 }
+.product-thumb img {
+  width: 100%;
+  max-width: 1232px;
+  height: auto;
+  aspect-ratio: 1232 / 816; /* Maintient un ratio uniforme */
+  object-fit: cover; /* Ajuste l'image tout en remplissant les dimensions définies */
+}
 
 /*** ==================ajouteee======================== ***/
