@@ -85,3 +85,35 @@
     
 })(jQuery);
 
+// URL de l'API REST Countries v2
+const url = 'https://restcountries.com/v2/all';
+
+// Fonction pour charger les pays
+function loadCountries() {
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const select = document.getElementById('Nationalité');
+            
+            // Ajoute les pays à la liste déroulante
+            data.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country.alpha3Code; // Utilisation du code pays
+                option.textContent = country.name; // Nom du pays
+                select.appendChild(option);
+            });
+            
+            // Option "Autre"
+            const autreOption = document.createElement('option');
+            autreOption.value = "Autre";
+            autreOption.textContent = "Autre";
+            select.appendChild(autreOption);
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement des pays:', error);
+            alert('Impossible de charger la liste des pays. Veuillez vérifier votre connexion.');
+        });
+}
+
+// Appel de la fonction pour charger les pays au chargement de la page
+document.addEventListener('DOMContentLoaded', loadCountries);
