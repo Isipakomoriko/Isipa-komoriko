@@ -1,8 +1,11 @@
-// Attendre que le DOM soit chargé avant d'exécuter le code
+"// Attendre que le DOM soit chargé avant d'exécuter le code"
+
 document.addEventListener("DOMContentLoaded", async function () {
+    
+    
     // Configuration des URLs de base et du proxy
     const BASE_URL = "https://inscription.isipa-komoriko.cd/api";
-    const proxyUrl = "https://proxy-isipa-komoriko.sebastienlumina8.workers.dev/?url=";
+    const proxyUrl = "https://proxy-isipa-komoriko.sebastienlumuna8.workers.dev/?url=";
     const loginUrl = proxyUrl + encodeURIComponent(`${BASE_URL}/auth/login`);
     const refreshTokenUrl = proxyUrl + encodeURIComponent(`${BASE_URL}/auth/refresh-token`);
 
